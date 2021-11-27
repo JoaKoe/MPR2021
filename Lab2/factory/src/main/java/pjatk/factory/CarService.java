@@ -8,7 +8,7 @@ import java.util.Optional;
 public class CarService {
 
     public final CarRepository carRepository;
-
+    String newColor = "Pink";
 
     public CarService(CarRepository carRepository) {
         this.carRepository = carRepository;
@@ -27,21 +27,21 @@ public class CarService {
         }
     }
 
-    public String rePaint(Car car)
+    public String rePaint(Car car, String newColor)
     {
-        String newColor = "Pink";
         car.setColor(newColor);
-        return newColor;
+        return car.getColor();
     }
 
-    public void isThisWrack(Car car)
+    public boolean isThisWrack(Car car)
     {
         boolean wrack = false;
         String marka1 = car.getMarka();
             if (marka1 == "Fiat")
             {
-                wrack = false;
+                return true;
             }
+                else {return false;}
 
     }
 
@@ -77,8 +77,9 @@ public class CarService {
 
 
 
+
     public Car returnCar(String marka, String model) {
-        Car car = new Car( marka, "black", "red", "sport", model, 3);
+        Car car = new Car( marka, "black", "red", "sport", model, 3, false);
         return carRepository.save(car);
     }
 

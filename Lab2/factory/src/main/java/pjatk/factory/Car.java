@@ -23,6 +23,16 @@ public class Car {
     private String marka; //marka czyli audi czy cos
     private int numberOfWheels;
 
+    public boolean isWrack() {
+        return wrack;
+    }
+
+    public void setWrack(boolean wrack) {
+        this.wrack = wrack;
+    }
+
+    private boolean wrack;
+
 
     public Long getId() {
         return id;
@@ -81,7 +91,7 @@ public class Car {
 
     }
 
-    public Car(String marka, String wheels, String color, String engine, String model, int numberOfWheels) { //konstruktor auta
+    public Car(String marka, String wheels, String color, String engine, String model, int numberOfWheels, boolean wrack) { //konstruktor auta
 
         this.marka = marka;
         this.wheels = wheels;
@@ -89,6 +99,7 @@ public class Car {
         this.engine = engine;
         this.model = model;
         this.numberOfWheels = numberOfWheels;
+        this.wrack = wrack;
     }
 
     @Override //zapisuje zmienne jako string aby wyświeltić jako napis
@@ -101,6 +112,7 @@ public class Car {
                 ", engine='" + engine + '\'' +
                 ", model='" + model + '\'' +
                 ", ilosc kol ='" + numberOfWheels + '\'' +
+                "wrak?: " + wrack +
                 '}';
     }
 }
