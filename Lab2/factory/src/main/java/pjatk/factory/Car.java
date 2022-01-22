@@ -16,12 +16,14 @@ public class Car {
     @GeneratedValue(strategy= GenerationType.AUTO)  // dzięki temu id nadawane jest encja a nie globalnie
     private Long id;
 
-    private String wheels; //ilosc albo rodzaj
+    private String wheels; //rodzaj
     private String color; //kolor karoserii
     private String engine; //typ silnika
     private String model; //kombi, kabrio czy jak
     private String marka; //marka czyli audi czy cos
     private int numberOfWheels;
+
+
 
     public boolean isWrack() {
         return wrack;

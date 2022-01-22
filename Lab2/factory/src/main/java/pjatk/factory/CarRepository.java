@@ -1,6 +1,6 @@
 package pjatk.factory;
 
-import org.springframework.beans.factory.BeanFactory;
+//import org.springframework.beans.factory.BeanFactory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

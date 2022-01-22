@@ -1,0 +1,37 @@
+package pjatk.factory;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import pjatk.factory.Car;
+import pjatk.factory.CarService;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
+
+@SpringBootTest
+class CarServiceITest {
+
+    @MockBean
+    private CarRepository carRepository;
+
+    @Autowired
+    private CarService carService;
+
+    @Test
+    void shouldAddExtraWheel(){
+        //given
+        Car car = new Car("random marka", "randomw wheels", "red", "randoe engine", "randoe model", 5, false);
+        //when
+        carService.AddExtraWheel(car);
+        //then
+        assertThat(car.getNumberOfWheels()).isEqualTo(5);
+    }
+
+ //   @Test
+  //  void shouldBulidCar(){
+  //      when(carRepository.save(any())).thenReturn(new Car("AAA", 10, "BBB", 100 "ccc","bbb"));
+    //}
+
+}
